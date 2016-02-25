@@ -26,6 +26,8 @@ namespace MicrosoftBandConnector
     /// </summary>
     sealed partial class App : Application
     {
+
+        IBandClient bandClient;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -96,7 +98,7 @@ namespace MicrosoftBandConnector
             // connect to the first device
             var bandInfo = pairedBands.FirstOrDefault();
 
-            using (var bandClient = await bandManager.ConnectAsync(bandInfo))
+            using (bandClient = await bandManager.ConnectAsync(bandInfo))
             {
                 var tiles = await bandClient.TileManager.GetTilesAsync();
                 await bandClient.TileManager.RemoveTileAsync(guid);
@@ -187,18 +189,10 @@ namespace MicrosoftBandConnector
             var pairedBands = await bandManager.GetBandsAsync();
             // connect to the first device
             var bandInfo = pairedBands.FirstOrDefault();
-
-            var bandClient = await bandManager.ConnectAsync(bandInfo);
-
-            var tiles = await bandClient.TileManager.GetTilesAsync();
-
-            var tile = tiles.First();
-
+            bandClient = await bandManager.ConnectAsync(bandInfo);
             bandClient.TileManager.TileOpened += TileManager_TileOpened;
 
             await bandClient.TileManager.StartReadingsAsync();
-
-
         }
 
         private async void TileManager_TileOpened(object sender, BandTileEventArgs<IBandTileOpenedEvent> e)
@@ -206,12 +200,20 @@ namespace MicrosoftBandConnector
             //alert!
             //Create new alert in the alerts list
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            var result = await client.GetDataAsync(27);
+
+            var eventUniqueID = new DateTime().Millisecond * new Random().Next(1, 5);
+
+            var result = await client.GetDataAsync("ALERT FROM BAND",59.975349,10.665395, eventUniqueID);
             await client.CloseAsync();
 
-
             //Start sending live data from band to a new event list in sharepoint
+            
 
+        }
+
+        private void Gsr_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandGsrReading> e)
+        {
+            
         }
 
         /// <summary>

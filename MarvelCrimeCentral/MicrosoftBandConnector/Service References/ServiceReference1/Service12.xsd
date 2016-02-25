@@ -4,7 +4,10 @@
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="value" type="xs:int" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="coordinateX" type="xs:double" />
+        <xs:element minOccurs="0" name="coordinateY" type="xs:double" />
+        <xs:element minOccurs="0" name="UniqueID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
