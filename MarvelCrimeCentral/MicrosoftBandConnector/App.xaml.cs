@@ -206,7 +206,7 @@ namespace MicrosoftBandConnector
             //alert!
             //Create new alert in the alerts list
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            var result = await client.GetDataAsync(27);
+            var result = await client.GetDataAsync("alert");
             await client.CloseAsync();
 
 

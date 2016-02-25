@@ -65,7 +65,7 @@ namespace MicrosoftBandConnector.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        System.Threading.Tasks.Task<string> GetDataAsync(string value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<MicrosoftBandConnector.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(MicrosoftBandConnector.ServiceReference1.CompositeType composite);
@@ -114,7 +114,7 @@ namespace MicrosoftBandConnector.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
+        public System.Threading.Tasks.Task<string> GetDataAsync(string value) {
             return base.Channel.GetDataAsync(value);
         }
         
