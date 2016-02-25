@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MarvelCrimeCentral/ASPC.Marvel.CrimeAPI/obj
+/MarvelCrimeCentral/ASPC.Marvel.CrimeAPI/bin
+/MarvelCrimeCentral/packages
