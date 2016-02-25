@@ -203,7 +203,7 @@ namespace MicrosoftBandConnector
 
             var eventUniqueID = new DateTime().Millisecond * new Random().Next(1, 5);
 
-            var result = await client.GetDataAsync("ALERT FROM BAND",59.975349,10.665395, eventUniqueID);
+            var result = await client.GetDataAsync(59.975349,10.665395, eventUniqueID);
             await client.CloseAsync();
 
             //Start sending live data from band to a new event list in sharepoint

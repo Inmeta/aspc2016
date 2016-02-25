@@ -14,7 +14,7 @@ namespace WCFServiceWebRole1
     {
 
         [OperationContract]
-        string GetData(string value, double coordinateX, double coordinateY, int UniqueID);
+        string GetData(double coordinateX, double coordinateY, int UniqueID);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
