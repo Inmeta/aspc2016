@@ -98,7 +98,7 @@ namespace MicrosoftBandConnector
             // connect to the first device
             var bandInfo = pairedBands.FirstOrDefault();
 
-            using (var bandClient = await bandManager.ConnectAsync(bandInfo))
+            using (bandClient = await bandManager.ConnectAsync(bandInfo))
             {
                 var tiles = await bandClient.TileManager.GetTilesAsync();
                 await bandClient.TileManager.RemoveTileAsync(guid);
@@ -189,7 +189,7 @@ namespace MicrosoftBandConnector
             var pairedBands = await bandManager.GetBandsAsync();
             // connect to the first device
             var bandInfo = pairedBands.FirstOrDefault();
-            await bandManager.ConnectAsync(bandInfo);
+            bandClient = await bandManager.ConnectAsync(bandInfo);
             bandClient.TileManager.TileOpened += TileManager_TileOpened;
 
             await bandClient.TileManager.StartReadingsAsync();

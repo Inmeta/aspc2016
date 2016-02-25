@@ -40,7 +40,7 @@ namespace WCFServiceWebRole1
                 ctx.Load(web);
                 ctx.ExecuteQuery();
 
-                List myList = web.Lists.GetByTitle("SuperHeroLiveData");
+                List myList = web.Lists.GetByTitle("Alerts");
 
                 ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
                 ListItem newItem = myList.AddItem(itemCreateInfo);
