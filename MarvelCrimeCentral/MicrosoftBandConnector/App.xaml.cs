@@ -84,11 +84,26 @@ namespace MicrosoftBandConnector
             // Ensure the current window is active
             Window.Current.Activate();
 
-            //SetBandTite();
+            //SetBandTile();
             GetBandNotifications();
         }
 
-        private async void SetBandTite()
+        private async void deleteExistingTile(Guid guid)
+        {
+            var bandManager = BandClientManager.Instance;
+            // query the service for paired devices
+            var pairedBands = await bandManager.GetBandsAsync();
+            // connect to the first device
+            var bandInfo = pairedBands.FirstOrDefault();
+
+            using (var bandClient = await bandManager.ConnectAsync(bandInfo))
+            {
+                var tiles = await bandClient.TileManager.GetTilesAsync();
+                await bandClient.TileManager.RemoveTileAsync(guid);
+            }
+        }
+
+        private async void SetBandTile()
         {
             var bandManager = BandClientManager.Instance;
             // query the service for paired devices
@@ -98,78 +113,20 @@ namespace MicrosoftBandConnector
 
             var bandClient = await bandManager.ConnectAsync(bandInfo);
 
-            //var tiles = await bandClient.TileManager.GetTilesAsync();
-            //Guid guidToRemove = new Guid("{7d7eb894-eabc-43a0-a976-9dfd3aa773c7}");
-            //await bandClient.TileManager.RemoveTileAsync(guidToRemove);
-            //return;
-
-
-            ////RETRIEVING THE BAND VERSION INFORMATION
-            //string fwVersion;//"2.0.3923.0"
-            //string hwVersion;//"26"
-            //try
-            //{
-            //    fwVersion = await bandClient.GetFirmwareVersionAsync();
-            //    hwVersion = await bandClient.GetHardwareVersionAsync();
-            //    // do work with firmware & hardware versions
-            //}
-            //catch (BandException ex)
-            //{
-            //    // handle any BandExceptions
-            //}
-            /////////////////////////////////////////
-
-
-            //// check current user heart rate consent
-            //if (bandClient.SensorManager.HeartRate.GetCurrentUserConsent() !=
-            //UserConsent.Granted)
-            //{
-            //    // user hasn’t consented, request consent
-            //    await
-            //    bandClient.SensorManager.HeartRate.RequestUserConsentAsync();
-            //}
-
-            //// get a list of available reporting intervals
-            //IEnumerable<TimeSpan> supportedHeartBeatReportingIntervals =
-            //bandClient.SensorManager.HeartRate.SupportedReportingIntervals;
-            //foreach (var ri in supportedHeartBeatReportingIntervals)
-            //{
-            // // do work with each reporting interval (i.e., add them to a list
-            ////in the UI)
-            //}
-
-            //// set the reporting interval
-            //bandClient.SensorManager.HeartRate.ReportingInterval = new TimeSpan(0, 0, 1);
-            ////supportedHeartBeatReportingIntervals.GetEnumerator().Current;
-
-            //// hook up to the Heartrate sensor ReadingChanged event
-            //bandClient.SensorManager.HeartRate.ReadingChanged += HeartRate_ReadingChanged;
-
-            //// start the Heartrate sensor
-            //try
-            //{
-            //    await bandClient.SensorManager.HeartRate.StartReadingsAsync();
-            //}
-            //catch (BandException ex)
-            //{
-            //    // handle a Band connection exception
-            //    throw ex;
-            //}
-
-            // stop the Heartrate sensor
-            //try
-            //{
-            //    await bandClient.SensorManager.HeartRate.StopReadingsAsync();
-            //}
-            //catch (BandException ex)
-            //{
-            //    // handle a Band connection exception
-            //    throw ex;
-            //}
-
-
-
-
+            //RETRIEVING THE BAND VERSION INFORMATION
+            string fwVersion;//"2.0.3923.0"
+            string hwVersion;//"26"
+            try
+            {
+                fwVersion = await bandClient.GetFirmwareVersionAsync();
+                hwVersion = await bandClient.GetHardwareVersionAsync();
+                // do work with firmware & hardware versions
+            }
+            catch (BandException ex)
+            {
+                // handle any BandExceptions
+            }
+            ///////////////////////////////////////
 
 
 
@@ -249,7 +206,7 @@ namespace MicrosoftBandConnector
             //alert!
             //Create new alert in the alerts list
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            var result = await client.GetDataAsync(1);
+            var result = await client.GetDataAsync(27);
             await client.CloseAsync();
 
 
