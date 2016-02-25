@@ -37,3 +37,18 @@ Add-SPOFieldToContentType -Field "AlertStatus" -ContentType "Alert"
 New-SPOList -Title "Alerts" -Url "Alerts" -Template GenericList
 
 Add-SPOContentTypeToList -List "Alerts" -ContentType "Alert" -DefaultContentType
+
+#Monitor Live Data List
+Add-SPOContentType -Name "Live Data" -Description "Use to monitor live Data sent from the Band" -Group "Marvel Content Types" -ParentContentType $ct
+
+Add-SPOField -DisplayName "Data Type" -InternalName "DataType" -Type Text -Group "Marvel CCU" -AddToDefaultView
+Add-SPOField -DisplayName "Data Value" -InternalName "DataValue" -Type Text -Group "Marvel CCU" -AddToDefaultView
+
+
+Add-SPOFieldToContentType -Field "AlertID" -ContentType "Live Data"
+Add-SPOFieldToContentType -Field "DataType" -ContentType "Live Data"
+Add-SPOFieldToContentType -Field "DataValue" -ContentType "Live Data"
+
+New-SPOList -Title "MonitorLiveData" -Url "MonitorLiveData" -Template GenericList
+
+Add-SPOContentTypeToList -List "MonitorLiveData" -ContentType "Live Data" -DefaultContentType
