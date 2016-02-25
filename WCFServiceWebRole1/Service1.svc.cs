@@ -45,6 +45,9 @@ namespace WCFServiceWebRole1
                 ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
                 ListItem newItem = myList.AddItem(itemCreateInfo);
                 newItem["Title"] = value.ToString();
+                newItem["coordinateX"] = coordinateX.ToString();
+                newItem["coordinateY"] = coordinateY.ToString();
+                newItem["UniqueID"] = UniqueID.ToString();
                 newItem.Update();
 
                 ctx.ExecuteQuery();
