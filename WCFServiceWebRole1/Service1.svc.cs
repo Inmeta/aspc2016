@@ -14,19 +14,19 @@ namespace WCFServiceWebRole1
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(string value)
+        public string GetData(string value, double coordinateX, double coordinateY, int UniqueID)
         {
 
             string tenant = "https://aspc1605.sharepoint.com/ASPC/";
             string userName = "admin@aspc1605.onmicrosoft.com";
             string passwordString = "pass@word1";
-            CreateListItem(tenant, userName, passwordString, value);
+            CreateListItem(tenant, userName, passwordString, value, coordinateX, coordinateY, UniqueID);
 
 
             return string.Format("You entered: {0}", value);
         }
 
-        private static void CreateListItem(string tenant, string userName, string passwordString, string value)
+        private static void CreateListItem(string tenant, string userName, string passwordString, string value, double coordinateX, double coordinateY, int UniqueID)
         {
             // Get access to source site
             using (var ctx = new ClientContext(tenant))
