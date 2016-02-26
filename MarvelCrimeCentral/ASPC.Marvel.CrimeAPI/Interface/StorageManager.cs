@@ -23,9 +23,9 @@ namespace ASPC.Marvel.CrimeAPI
             Database.Add(new Agent() { Name = "Ironman", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 83, GSR = 63, UV = 12, Barometer = 23 });
         }
 
-        internal static MemmoryStorage<T> Storage<T>() where T : Node
+        internal static MemoryStorage<T> Storage<T>() where T : Node
         {
-            var ps = new MemmoryStorage<T>(Database);
+            var ps = new MemoryStorage<T>(Database);
             //ps.OnChange += delegate (object sender, ChangeType crud) { Changes<T>(sender as T, crud); };
             return ps;
         }

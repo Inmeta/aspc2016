@@ -28,6 +28,7 @@ namespace MicrosoftBandConnector
     {
 
         IBandClient bandClient;
+        int eventUniqueID;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -184,6 +185,8 @@ namespace MicrosoftBandConnector
 
         private async void GetBandNotifications()
         {
+            eventUniqueID = DateTime.Now.Millisecond * DateTime.Now.Second * new Random().Next(1, 5);
+
             var bandManager = BandClientManager.Instance;
             // query the service for paired devices
             var pairedBands = await bandManager.GetBandsAsync();
@@ -201,19 +204,244 @@ namespace MicrosoftBandConnector
             //Create new alert in the alerts list
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
 
-            var eventUniqueID = new DateTime().Millisecond * new Random().Next(1, 5);
-
-            var result = await client.GetDataAsync(59.975349,10.665395, eventUniqueID);
+            var result = await client.CreateAlertAsync(59.975349, 10.665395, eventUniqueID);
             await client.CloseAsync();
 
-            //Start sending live data from band to a new event list in sharepoint
+            heartRateMonitor();
+            skinTemperatureMonitor();
+            GyroscopeMonitor();
+            PedometerMonitor();
+            GsrMonitor();
+            UVMonitor();
+
+            // start the Heartrate sensor
+            try
+            {
+                await bandClient.SensorManager.HeartRate.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
+            try
+            {
+                await bandClient.SensorManager.Gyroscope.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
+            try
+            {
+                await bandClient.SensorManager.Pedometer.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
+            try
+            {
+                await bandClient.SensorManager.Gsr.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
+            try
+            {
+                await bandClient.SensorManager.UV.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
+
+            try
+            {
+                await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
+            }
+            catch (BandException ex)
+            {
+                // handle a Band connection exception
+                throw ex;
+            }
             
+
+
+
+
+        }
+
+
+        private async void heartRateMonitor()
+        {
+            //// get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedHeartBeatReportingIntervals =
+            bandClient.SensorManager.HeartRate.SupportedReportingIntervals;
+
+            //// check current user heart rate consent
+            if (bandClient.SensorManager.HeartRate.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.HeartRate.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.HeartRate.ReportingInterval = supportedHeartBeatReportingIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.HeartRate.ReadingChanged += HeartRate_ReadingChanged;
+
+        }
+
+        private async void skinTemperatureMonitor()
+        {
+            // get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedSkinTemperatureIntervals =
+            bandClient.SensorManager.SkinTemperature.SupportedReportingIntervals;
+
+
+            // check current user heart rate consent
+            if (bandClient.SensorManager.SkinTemperature.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.SkinTemperature.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.SkinTemperature.ReportingInterval = supportedSkinTemperatureIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.SkinTemperature.ReadingChanged += SkinTemperature_ReadingChanged;
+
+        }
+
+        private async void GyroscopeMonitor()
+        {
+            // get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedGyroscopeIntervals =
+            bandClient.SensorManager.Gyroscope.SupportedReportingIntervals;
+
+
+            // check current user heart rate consent
+            if (bandClient.SensorManager.Gyroscope.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.Gyroscope.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.Gyroscope.ReportingInterval = supportedGyroscopeIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.Gyroscope.ReadingChanged += Gyroscope_ReadingChanged;
+        }
+
+        private void Gyroscope_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandGyroscopeReading> e)
+        {
+            SendLiveData("Gyroscope", e.SensorReading.AccelerationX);
+        }
+
+        private async void PedometerMonitor()
+        {
+            // get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedPedometerIntervals =
+            bandClient.SensorManager.Pedometer.SupportedReportingIntervals;
+
+
+            // check current user heart rate consent
+            if (bandClient.SensorManager.Pedometer.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.Pedometer.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.Pedometer.ReportingInterval = supportedPedometerIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.Pedometer.ReadingChanged += Pedometer_ReadingChanged;
+        }
+
+        private void Pedometer_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandPedometerReading> e)
+        {
+            SendLiveData("Pedometer", e.SensorReading.StepsToday);
+        }
+
+        private async void GsrMonitor()
+        {
+            // get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedGsrIntervals =
+            bandClient.SensorManager.Gsr.SupportedReportingIntervals;
+
+
+            // check current user heart rate consent
+            if (bandClient.SensorManager.Gsr.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.Gsr.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.Gsr.ReportingInterval = supportedGsrIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.Gsr.ReadingChanged += Gsr_ReadingChanged;
 
         }
 
         private void Gsr_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandGsrReading> e)
         {
-            
+            SendLiveData("Gsr", e.SensorReading.Resistance);
+        }
+
+        private async void UVMonitor()
+        {
+            // get a list of available reporting intervals
+            IEnumerable<TimeSpan> supportedUVIntervals =
+            bandClient.SensorManager.UV.SupportedReportingIntervals;
+
+
+            // check current user heart rate consent
+            if (bandClient.SensorManager.UV.GetCurrentUserConsent() !=
+            UserConsent.Granted)
+            {
+                // user hasn’t consented, request consent
+                await
+                bandClient.SensorManager.UV.RequestUserConsentAsync();
+            }
+            // set the reporting interval
+            bandClient.SensorManager.UV.ReportingInterval = supportedUVIntervals.First();
+            // hook up to the Heartrate sensor ReadingChanged event
+            bandClient.SensorManager.UV.ReadingChanged += UV_ReadingChanged;
+        }
+
+        private void UV_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandUVReading> e)
+        {
+            SendLiveData("UV", e.SensorReading.ExposureToday);
+        }
+
+        private void SkinTemperature_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandSkinTemperatureReading> e)
+        {
+            SendLiveData("SkinTemperature", e.SensorReading.Temperature);
+        }
+
+
+        private void HeartRate_ReadingChanged(object sender, Microsoft.Band.Sensors.BandSensorReadingEventArgs<Microsoft.Band.Sensors.IBandHeartRateReading> e)
+        {
+            SendLiveData("HeartRate",e.SensorReading.HeartRate);
+        }
+
+        private void SendLiveData(string type, double value)
+        {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            client.SendMonitoringDataAsync(eventUniqueID, type, value);
+            client.CloseAsync();
         }
 
         /// <summary>

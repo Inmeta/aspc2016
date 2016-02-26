@@ -125,7 +125,7 @@
     <Compile Include="Controller\CrimeController.cs" />
     <Compile Include="Controller\GenericController.cs" />
     <Compile Include="Domain\Agent.cs" />
-    <Compile Include="Domain\MemmoryStorage.cs" />
+    <Compile Include="Domain\MemoryStorage.cs" />
     <Compile Include="Interface\StorageManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

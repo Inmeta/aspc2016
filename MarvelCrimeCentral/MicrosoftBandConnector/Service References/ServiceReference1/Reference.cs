@@ -64,8 +64,11 @@ namespace MicrosoftBandConnector.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(double coordinateX, double coordinateY, int UniqueID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAlert", ReplyAction="http://tempuri.org/IService1/CreateAlertResponse")]
+        System.Threading.Tasks.Task<string> CreateAlertAsync(double coordinateX, double coordinateY, int UniqueID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendMonitoringData", ReplyAction="http://tempuri.org/IService1/SendMonitoringDataResponse")]
+        System.Threading.Tasks.Task SendMonitoringDataAsync(int UniqueID, string type, double value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<MicrosoftBandConnector.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(MicrosoftBandConnector.ServiceReference1.CompositeType composite);
@@ -114,8 +117,12 @@ namespace MicrosoftBandConnector.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(double coordinateX, double coordinateY, int UniqueID) {
-            return base.Channel.GetDataAsync(coordinateX, coordinateY, UniqueID);
+        public System.Threading.Tasks.Task<string> CreateAlertAsync(double coordinateX, double coordinateY, int UniqueID) {
+            return base.Channel.CreateAlertAsync(coordinateX, coordinateY, UniqueID);
+        }
+        
+        public System.Threading.Tasks.Task SendMonitoringDataAsync(int UniqueID, string type, double value) {
+            return base.Channel.SendMonitoringDataAsync(UniqueID, type, value);
         }
         
         public System.Threading.Tasks.Task<MicrosoftBandConnector.ServiceReference1.CompositeType> GetDataUsingDataContractAsync(MicrosoftBandConnector.ServiceReference1.CompositeType composite) {

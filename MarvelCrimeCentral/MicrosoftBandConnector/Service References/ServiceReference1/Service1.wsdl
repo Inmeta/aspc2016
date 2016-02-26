@@ -7,11 +7,17 @@
       <xsd:import schemaLocation="http://sharepointbridgetoiot.cloudapp.net/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole1" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
+  <wsdl:message name="IService1_CreateAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlert" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  <wsdl:message name="IService1_CreateAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SendMonitoringData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMonitoringData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SendMonitoringData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMonitoringDataResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
@@ -20,9 +26,13 @@
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    <wsdl:operation name="CreateAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateAlert" message="tns:IService1_CreateAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateAlertResponse" message="tns:IService1_CreateAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMonitoringData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SendMonitoringData" message="tns:IService1_SendMonitoringData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SendMonitoringDataResponse" message="tns:IService1_SendMonitoringData_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -31,8 +41,17 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+    <wsdl:operation name="CreateAlert">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMonitoringData">
+      <soap:operation soapAction="http://tempuri.org/IService1/SendMonitoringData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

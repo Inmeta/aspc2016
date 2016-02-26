@@ -14,15 +14,14 @@ namespace WCFServiceWebRole1
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(double coordinateX, double coordinateY, int UniqueID)
+        static string tenant = "https://aspc1605.sharepoint.com/ASPC/";
+        static string userName = "admin@aspc1605.onmicrosoft.com";
+        static string passwordString = "pass@word1";
+
+        public string CreateAlert(double coordinateX, double coordinateY, int UniqueID)
         {
-
-            string tenant = "https://aspc1605.sharepoint.com/ASPC/";
-            string userName = "admin@aspc1605.onmicrosoft.com";
-            string passwordString = "pass@word1";
-
             try {
-                CreateListItem(tenant, userName, passwordString, coordinateX, coordinateY, UniqueID);
+                CreateListItem(coordinateX, coordinateY, UniqueID);
                 return string.Format("Alert added to list!");
             }
             catch(Exception exp)
@@ -33,7 +32,7 @@ namespace WCFServiceWebRole1
             
         }
 
-        private static void CreateListItem(string tenant, string userName, string passwordString, double coordinateX, double coordinateY, int UniqueID)
+        private static void CreateListItem(double coordinateX, double coordinateY, int UniqueID)
         {
             // Get access to source site
             using (var ctx = new ClientContext(tenant))
@@ -72,6 +71,33 @@ namespace WCFServiceWebRole1
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public void SendMonitoringData(int UniqueID, string type, double value)
+        {
+            // Get access to source site
+            using (var ctx = new ClientContext(tenant))
+            {
+                //Provide count and pwd for connecting to the source
+                var passWord = new SecureString();
+                foreach (char c in passwordString.ToCharArray()) passWord.AppendChar(c);
+                ctx.Credentials = new SharePointOnlineCredentials(userName, passWord);
+                // Actual code for operations
+                Web web = ctx.Web;
+                ctx.Load(web);
+                ctx.ExecuteQuery();
+
+                List myList = web.Lists.GetByTitle("MonitorLiveData");
+
+                ListItemCreationInformation itemCreateInfo = new ListItemCreationInformation();
+                ListItem newItem = myList.AddItem(itemCreateInfo);
+                newItem["AlertID"] = UniqueID.ToString();
+                newItem["DataType"] = type.ToString();
+                newItem["DataValue"] = value;
+                newItem.Update();
+
+                ctx.ExecuteQuery();
+            }
         }
     }
 }
