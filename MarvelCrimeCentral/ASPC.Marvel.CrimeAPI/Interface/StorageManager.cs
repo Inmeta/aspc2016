@@ -16,12 +16,16 @@ namespace ASPC.Marvel.CrimeAPI
             Database.Add(new Crime() { Name = "Vandalism", Location = new Geolocation(59.588478375006096, 10.700847142654197), Source = "Hulk" });
             Database.Add(new Crime() { Name = "N/A", Location = new Geolocation(59.688478375006096, 10.700847142654197), Source = "Ironman" });
 
-            Database.Add(new Agent() { Name = "Spiderman", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 92, GSR = 34, UV = 12, Barometer = 23 });
-            Database.Add(new Agent() { Name = "Blackwidow", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 74, GSR = 56, UV = 12, Barometer = 23 });
-            Database.Add(new Agent() { Name = "Thor", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 75, GSR = 74, UV = 12, Barometer = 23 });
-            Database.Add(new Agent() { Name = "Hulk", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 120, GSR = 90, UV = 12, Barometer = 23 });
-            Database.Add(new Agent() { Name = "Ironman", Location = new Geolocation(59.96185080545863, 10.627836064862777), BPM = 83, GSR = 63, UV = 12, Barometer = 23 });
+            Database.Add(new Agent() { Name = "Spiderman", Location = new Geolocation(59.9750629, 10.6641534), BPM = 92, GSR = 34, UV = 12, Barometer = 23 });
+            Database.Add(new Agent() { Name = "Blackwidow", Location = new Geolocation(59.9750529, 10.6641634), BPM = 74, GSR = 56, UV = 12, Barometer = 23 });
+            Database.Add(new Agent() { Name = "Thor", Location = new Geolocation(59.9750729, 10.6641734), BPM = 75, GSR = 74, UV = 12, Barometer = 23 });
+            Database.Add(new Agent() { Name = "Hulk", Location = new Geolocation(59.9750429, 10.6641434), BPM = 120, GSR = 90, UV = 12, Barometer = 23 });
+            Database.Add(new Agent() { Name = "Ironman", Location = new Geolocation(59.9750729, 10.6641234), BPM = 83, GSR = 63, UV = 12, Barometer = 23 });
+        
+
         }
+
+
 
         internal static MemoryStorage<T> Storage<T>() where T : Node
         {

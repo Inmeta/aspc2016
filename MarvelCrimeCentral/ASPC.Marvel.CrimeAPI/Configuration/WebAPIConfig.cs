@@ -28,7 +28,7 @@ namespace ASPC.Marvel.CrimeAPI
         public static void Register(HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();
-
+            config.EnableCors();
             // Web API configuration and services
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Node>("Node");

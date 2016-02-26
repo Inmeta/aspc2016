@@ -4,10 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.OData;
 
 namespace ASPC.Marvel.CrimeAPI.Controller
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public abstract class ODataControllerBase<T> : ODataController where T : Node
     {
         private IStorage<T> Storage;
