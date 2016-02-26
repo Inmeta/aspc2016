@@ -17,13 +17,14 @@
     <AssemblyName>ASPC.Marvel.CrimeAPI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44304</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetOfficeVersion>16.1</TargetOfficeVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,14 +114,28 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ccu.png" />
+    <Content Include="crime.jpg" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
+    <Content Include="index.aspx" />
+    <Content Include="marvel-shield-variant.svg" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="wwwroot\lib\angular\angular.js" />
+    <Content Include="wwwroot\lib\jquery\dist\jquery.js" />
     <None Include="Properties\PublishProfiles\aspc-crime-center-unit-api.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %286%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %287%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BrandingAddinWeb20160226101813 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\mapaddin.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
