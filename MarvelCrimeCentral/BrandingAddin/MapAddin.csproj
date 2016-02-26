@@ -54,9 +54,9 @@
     </AppManifestFile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrandingAddinWeb\BrandingAddinWeb.csproj">
+    <ProjectReference Include="..\BrandingAddinWeb\MapAddinWeb.csproj">
       <Project>{0AE89FA6-591D-4080-B73D-3EE7F2DDD4C4}</Project>
-      <Name>BrandingAddinWeb</Name>
+      <Name>MapAddinWeb</Name>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <OutputItemType>SharePointWebProjectOutput</OutputItemType>

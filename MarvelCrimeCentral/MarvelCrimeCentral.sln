@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceWebRole1", "..\WC
 EndProject
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "ProvisionSPOStructure", "ProvisionSPOStructure\ProvisionSPOStructure.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandingAddin", "BrandingAddin\BrandingAddin.csproj", "{050B0D3A-16B6-4BFD-B045-12826EF7A243}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapAddin", "BrandingAddin\MapAddin.csproj", "{050B0D3A-16B6-4BFD-B045-12826EF7A243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrandingAddinWeb", "BrandingAddinWeb\BrandingAddinWeb.csproj", "{0AE89FA6-591D-4080-B73D-3EE7F2DDD4C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapAddinWeb", "BrandingAddinWeb\MapAddinWeb.csproj", "{0AE89FA6-591D-4080-B73D-3EE7F2DDD4C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RasperryPiSenseHatConnector", "RasperryPiSenseHatConnector\RasperryPiSenseHatConnector.csproj", "{47F8A8D3-7CD4-4FA3-9F4D-213C3805199F}"
 EndProject
