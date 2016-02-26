@@ -1,2 +1,11 @@
 ﻿<pnp:Files xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+  <pnp:File Src="SiteAssets\Images\MCCULogo.png" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Theme\MCCU.spcolor" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.spfont" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\CSS\MCCU.css" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.eot" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.svg" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.ttf" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.woff" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU.woff2" Folder="SiteAssets" Overwrite="true" />
 </pnp:Files>

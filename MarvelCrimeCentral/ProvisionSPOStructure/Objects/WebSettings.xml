@@ -1,5 +1,7 @@
 <pnp:WebSettings xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema"
       MasterPageUrl="{sitecollection}/_catalogs/MasterPage/Seattle.master"
       CustomMasterPageUrl="{sitecollection}/_catalogs/MasterPage/Seattle.master"
-      WelcomePage="SitePages/Home.aspx">
+      WelcomePage="SitePages/Home.aspx"
+      SiteLogo="{sitecollection}/aspc/Siteassets/mcculogo.png" 
+      AlternateCSS="{sitecollection}/aspc/Siteassets/mccu.css">
 </pnp:WebSettings>
