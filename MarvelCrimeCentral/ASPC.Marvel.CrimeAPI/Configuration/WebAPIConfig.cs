@@ -36,13 +36,13 @@ namespace ASPC.Marvel.CrimeAPI
             builder.EntitySet<Agent>("Agent");
 
             //config
-            config.Routes.MapODataServiceRoute("odata", null, builder.GetEdmModel());
+            config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
 
             // Web API routes
             config.Routes.MapHttpRoute("api", "api/{controller}/{action}/{id}", new { action = RouteParameter.Optional, id = RouteParameter.Optional });
 
             config.Filters.Add(new AuthorizeAttribute());
-            config.MessageHandlers.Add(new TokenValidationHandler());
+            //config.MessageHandlers.Add(new TokenValidationHandler());
         }
     }
 

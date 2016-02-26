@@ -22,7 +22,7 @@
     <WorkflowPartId>{60c075c7-ea2d-4dc7-aab8-0187eab06b46}</WorkflowPartId>
     <CspkgPartId>{260030b7-bbe2-46f1-ae31-c3180fac9ae8}</CspkgPartId>
     <SqlPackagePartId>{569bc60e-7d4b-4f41-a39b-364505e55955}</SqlPackagePartId>
-    <ActivePublishProfile>BrandingAddinWeb20160226101813 - Web Deploy</ActivePublishProfile>
+    <ActivePublishProfile>BrandingAddinWeb20160226101813 - Web Deploy %288%29</ActivePublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,13 +54,13 @@
     </AppManifestFile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrandingAddinWeb\BrandingAddinWeb.csproj">
-      <Project>{0AE89FA6-591D-4080-B73D-3EE7F2DDD4C4}</Project>
-      <Name>BrandingAddinWeb</Name>
+    <ProjectReference Include="..\ASPC.Marvel.CrimeAPI\ASPC.Marvel.CrimeAPI.csproj">
+      <Project>{A751E36F-FE77-4888-91AB-2985BF388288}</Project>
+      <Name>ASPC.Marvel.CrimeAPI</Name>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <OutputItemType>SharePointWebProjectOutput</OutputItemType>
-      <RoleName>BrandingAddinWeb</RoleName>
+      <RoleName>ASPC.Marvel.CrimeAPI</RoleName>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
