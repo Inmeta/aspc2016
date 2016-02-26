@@ -27,10 +27,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="SIteAssets\" />
     <Folder Include="Objects\" />
+    <Folder Include="SIteAssets\Fonts\" />
+    <Folder Include="SIteAssets\CSS\" />
+    <Folder Include="SIteAssets\Images\" />
+    <Folder Include="SIteAssets\Theme\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Objects\ComposedLook.xml" />
     <Compile Include="Objects\ContentTypes.xml" />
     <Compile Include="Objects\CustomActions.xml" />
     <Compile Include="Objects\Features.xml" />
@@ -41,6 +45,18 @@
     <Compile Include="Objects\WebSettings.xml" />
     <Compile Include="ProvisionSPOStructure.ps1" />
     <Compile Include="template.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Objects\ComposedLook.xml" />
+    <Content Include="SIteAssets\Fonts\MCCU.spfont" />
+    <Content Include="SIteAssets\CSS\mccu.css" />
+    <Content Include="SIteAssets\Fonts\MCCU.eot" />
+    <Content Include="SIteAssets\Fonts\MCCU.svg" />
+    <Content Include="SIteAssets\Fonts\MCCU.ttf" />
+    <Content Include="SIteAssets\Fonts\MCCU.woff" />
+    <Content Include="SIteAssets\Fonts\MCCU.woff2" />
+    <Content Include="SIteAssets\Images\MCCUlogo.png" />
+    <Content Include="SIteAssets\Theme\MCCU.spcolor" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
