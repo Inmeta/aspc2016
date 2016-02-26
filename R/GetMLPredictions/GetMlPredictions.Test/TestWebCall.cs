@@ -11,7 +11,8 @@ namespace GetMlPredictions.Test
         public void DoTestCall()
         {
             var t = new PredictML();
-            t.GetCrimeNumberByCoordAndYear(51.20304, 12.134566, 2016);
+            var numberOfCrimesPerYear = t.GetCrimeNumberByCoordAndYear(51.20304, 12.134566, 2016);
+            Assert.IsTrue(numberOfCrimesPerYear >= 0);
         }
     }
 }
