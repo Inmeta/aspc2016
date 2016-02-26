@@ -1,0 +1,26 @@
+<pnp:ContentTypes xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+  <pnp:ContentType ID="0x0100E2D9099009F6A34AB642C28BE6B3C6CA" Name="Alert" Description="Use to store alert information" Group="{parameter:GenericContentTypesGroup}">
+        <pnp:FieldRefs>
+        <pnp:FieldRef ID="e1c503e9-90e6-4a93-861f-619151e0ad23" Name="AlertID" />
+        <pnp:FieldRef ID="6bc2324f-cd7e-40d6-b2c4-aaa47be15b45" Name="AlertSuperHero" />
+        <pnp:FieldRef ID="88395a93-016c-436d-b543-8e0db76cea5e" Name="AlertStatus" />
+        <pnp:FieldRef ID="15d02c5e-eab0-4e39-99f5-292608567ba7" Name="AlertCoordinatesX" />
+        <pnp:FieldRef ID="21455b99-c0e4-4c1c-a2e0-d696e018d33c" Name="AlertCoordinatesY" />
+    </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x010053B50283C039B04CAC74A3401BE561F4" Name="Live Data" Description="Use to monitor live Data sent from the Band" Group="{parameter:GenericContentTypesGroup}">
+        <pnp:FieldRefs>
+            <pnp:FieldRef ID="e1c503e9-90e6-4a93-861f-619151e0ad23" Name="AlertID" /> 
+            <pnp:FieldRef ID="2e8ff63b-6e45-4bb7-b47e-3712fed19279" Name="DataType" /> 
+            <pnp:FieldRef ID="b34e69fd-6a5c-42e2-b1fe-9f3e0c20e60d" Name="DataValue" />   
+        </pnp:FieldRefs>
+  </pnp:ContentType>
+  <pnp:ContentType ID="0x0100DE4FFD6230988E4899F2AFF9A25312D9" Name="Super Hero" Description="	Use to store Super Hero data" Group="{parameter:GenericContentTypesGroup}">
+        <pnp:FieldRefs>
+            <pnp:FieldRef ID="174420fc-4423-4063-8820-71d749e0e056" Name="HeroName" />
+            <pnp:FieldRef ID="3b084a26-6a2f-4f34-821c-c250a9910690" Name="HeroAvailability" />
+            <pnp:FieldRef ID="0a7348e9-0e60-493b-8dcc-b75bb70781aa" Name="HeroLocation" />
+            <pnp:FieldRef ID="2e81d18f-a7ca-499e-b9ce-51ed4a0b1f8d" Name="HeroID" />  
+        </pnp:FieldRefs>
+  </pnp:ContentType>
+</pnp:ContentTypes>

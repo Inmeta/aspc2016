@@ -1,0 +1,6 @@
+<pnp:Features xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+ 	<pnp:WebFeatures>
+		<pnp:Feature ID="87294c72-f260-42f3-a41b-981a2ffce37a" Deactivate="true" Description="Minimal Download Strategy" />
+		<pnp:Feature ID="d95c97f3-e528-4da2-ae9f-32b3535fbb59" Deactivate="true" Description="Mobile Browser View" />
+	</pnp:WebFeatures>
+</pnp:Features>

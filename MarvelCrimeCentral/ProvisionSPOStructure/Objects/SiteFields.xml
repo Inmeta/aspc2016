@@ -1,0 +1,94 @@
+<pnp:SiteFields xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema">
+    <Field
+        ID="{174420fc-4423-4063-8820-71d749e0e056}"
+        Name="HeroName"
+        DisplayName="Hero Name"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description="" />
+    <Field
+        ID="{e1c503e9-90e6-4a93-861f-619151e0ad23}"
+        Name="AlertID"
+        DisplayName="Alert ID"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+    <Field
+        ID="{15d02c5e-eab0-4e39-99f5-292608567ba7}"
+        Name="AlertCoordinatesX"
+        DisplayName="AlertCoordinatesX"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+    <Field
+        ID="{21455b99-c0e4-4c1c-a2e0-d696e018d33c}"
+        Name="AlertCoordinatesY"
+        DisplayName="AlertCoordinatesY"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+    <Field
+        ID="{2e81d18f-a7ca-499e-b9ce-51ed4a0b1f8d}"
+        Name="HeroID"
+        DisplayName="Hero ID"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+    <Field
+        ID="{2e8ff63b-6e45-4bb7-b47e-3712fed19279}"
+        Name="DataType"
+        DisplayName="Data Type"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+    <Field
+        ID="{b34e69fd-6a5c-42e2-b1fe-9f3e0c20e60d}"
+        Name="DataValue"
+        DisplayName="Data Value"
+        Type="Text"
+        Group="{parameter:GenericFieldsGroup}"
+        Description=""/>
+  <Field 
+         ID="{0a7348e9-0e60-493b-8dcc-b75bb70781aa}"
+         Name="HeroLocation"
+         DisplayName="Hero Location" 
+         Type="Geolocation"
+         Group="{parameter:GenericFieldsGroup}"/>
+  <Field 
+        ID="{3b084a26-6a2f-4f34-821c-c250a9910690}" 
+        Name="HeroAvailability" 
+        DisplayName="Hero Availability"
+        Type="Choice"
+        Group="{parameter:GenericFieldsGroup}">
+            <CHOICES>
+               <CHOICE>Available</CHOICE>
+               <CHOICE>Busy</CHOICE>
+            </CHOICES>
+  </Field>
+  <Field 
+        ID="{6bc2324f-cd7e-40d6-b2c4-aaa47be15b45}" 
+        Name="AlertSuperHero" 
+        DisplayName="Alert SuperHero"
+        Type="Choice"
+        Group="{parameter:GenericFieldsGroup}">
+            <CHOICES>
+               <CHOICE>Hulk</CHOICE>
+               <CHOICE>Thor</CHOICE>
+               <CHOICE>Black Widow</CHOICE>
+               <CHOICE>Ironman</CHOICE>
+               <CHOICE>Spiderman</CHOICE>
+            </CHOICES>
+  </Field>
+  <Field 
+        ID="{88395a93-016c-436d-b543-8e0db76cea5e}" 
+        Name="AlertStatus" 
+        DisplayName="Alert Status"
+        Type="Choice"
+        Group="{parameter:GenericFieldsGroup}">
+            <CHOICES>
+               <CHOICE>Received</CHOICE>
+               <CHOICE>Assigned</CHOICE>
+               <CHOICE>Completed</CHOICE>
+            </CHOICES>
+  </Field>
+</pnp:SiteFields>
