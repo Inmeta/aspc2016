@@ -26,9 +26,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Objects\ComposedLook.xml" />
+    <Compile Include="Objects\ContentTypes.xml" />
+    <Compile Include="Objects\CustomActions.xml" />
+    <Compile Include="Objects\Features.xml" />
+    <Compile Include="Objects\Files.xml" />
+    <Compile Include="Objects\Lists.xml" />
+    <Compile Include="Objects\PropertyBagEntries.xml" />
+    <Compile Include="Objects\SiteFields.xml" />
+    <Compile Include="Objects\WebSettings.xml" />
     <Compile Include="ProvisionSPOStructure.ps1" />
+    <Compile Include="template.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
