@@ -1,5 +1,5 @@
 ﻿Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/OfficeDev/PnP-PowerShell/master/Samples/Modules.Install/Install-OfficeDevPnPPowerShell.ps1')
-Connect-SPOnline –Url https://aspc1605.sharepoint.com/ASPC/ –Credentials (Get-Credential)
+Connect-SPOnline –Url https://aspc1605.sharepoint.com/ASPC/ –Credentials "Aspc1605"
 
 Get-Command -Module *PnP*
 #Super Hero List
