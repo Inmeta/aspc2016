@@ -14,7 +14,12 @@ namespace WCFServiceWebRole1
     {
 
         [OperationContract]
-        string GetData(double coordinateX, double coordinateY, int UniqueID);
+        string CreateAlert(double coordinateX, double coordinateY, int UniqueID);
+
+
+        [OperationContract]
+        void SendMonitoringData(int UniqueID, string type, double value);
+
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
