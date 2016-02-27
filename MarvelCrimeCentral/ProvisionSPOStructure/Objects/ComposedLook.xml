@@ -1,6 +1,6 @@
 <pnp:ComposedLook xmlns:pnp="http://schemas.dev.office.com/PnP/2015/12/ProvisioningSchema"
     Name="Inmeta Look and Feel"
-    ColorFile="{sitecollection}/aspc/Siteassets/Mccu.spcolor"
-    FontFile="{sitecollection}/aspc/Siteassets/Mccu.spfont"
+    ColorFile="{sitecollection}/aspc/Siteassets/mccu.spcolor"
+    FontFile="{sitecollection}/aspc/Siteassets/mccu.spfont"
     BackgroundFile=""
     Version="1" />

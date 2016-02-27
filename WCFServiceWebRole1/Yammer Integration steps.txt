@@ -1,0 +1,9 @@
+1. – Get the application code
+https://www.yammer.com/oauth2/authorize?client_id=GulF4SpVXbs9ygZV4hRrg&response_type=code&redirect_uri=http://www.inmeta.no
+http://www.inmeta.no/?code=crrHRM9yqwlWaFvMLo2HqQ
+
+2. – Get the access token
+
+https://www.yammer.com/oauth2/access_token.json?client_id=GulF4SpVXbs9ygZV4hRrg&client_secret=L7IVj0UllPYr0f15qe1rCE1CPBG2rso2qsZwtA8WrE&code=crrHRM9yqwlWaFvMLo2HqQ
+{"access_token":{"user_id":1527878023,"network_id":954496,"network_permalink":"inmeta.no","network_name":"inmeta.no",
+"token":"954496-BjOb9f4eISyMX0HI0d3XTg",

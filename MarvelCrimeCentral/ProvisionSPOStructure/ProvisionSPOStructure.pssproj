@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Objects\ComposedLook.xml" />
+    <Content Include="SIteAssets\Fonts\mccu-large.png" />
+    <Content Include="SIteAssets\Fonts\mccu-small.png" />
     <Content Include="SIteAssets\Fonts\MCCU.spfont" />
     <Content Include="SIteAssets\CSS\mccu.css" />
     <Content Include="SIteAssets\Fonts\MCCU.eot" />

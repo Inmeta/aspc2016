@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:fontScheme name="MCCU" previewSlot1="title" previewSlot2="body" xmlns:s="http://schemas.microsoft.com/sharepoint/">
-    <s:fontSlots>
-        <s:fontSlot name="title">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/maskb.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/TypewriterEliteLarge.png" smallimgsrc="/_layouts/15/fonts/TypewriterEliteSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI Light" />
-        </s:fontSlot>
-        <s:fontSlot name="navigation">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/maskb.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/CalibriLarge.png" smallimgsrc="/_layouts/15/fonts/CalibriSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI" />
-        </s:fontSlot>
-        <s:fontSlot name="small-heading">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/maskb.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/CalibriLarge.png" smallimgsrc="/_layouts/15/fonts/CalibriSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI" />         
-        </s:fontSlot>
-        <s:fontSlot name="heading">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/maskb.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/CalibriLarge.png" smallimgsrc="/_layouts/15/fonts/CalibriSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI Semilight" />
-        </s:fontSlot>
-        <s:fontSlot name="large-heading">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/mccu.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/TypewriterEliteLarge.png" smallimgsrc="/_layouts/15/fonts/TypewriterEliteSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI Light" />
-        </s:fontSlot>
-        <s:fontSlot name="body">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/mccu.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/CalibriLarge.png" smallimgsrc="/_layouts/15/fonts/CalibriSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI" />
-        </s:fontSlot>
-        <s:fontSlot name="large-body">
-            <s:latin typeface="mccu" eotsrc="/siteassets/mccu.eot" woffsrc="/siteassets/mccu.woff" ttfsrc="/siteassets/mccu.ttf" svgsrc="/siteassets/mccu.svg" largeimgsrc="/_layouts/15/fonts/CalibriLarge.png" smallimgsrc="/_layouts/15/fonts/CalibriSmall.png" />
-            <s:ea typeface="" />
-            <s:cs typeface="Segoe UI Semilight" />
-        </s:fontSlot>
-    </s:fontSlots>
+<s:fontScheme name="EStruyf" previewSlot1="title" previewSlot2="body" xmlns:s="http://schemas.microsoft.com/sharepoint/">
+  <s:fontSlots>
+    <s:fontSlot name="title">
+      <s:latin typeface="mccuTitle" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="navigation">
+      <s:latin typeface="mccuNavigation" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="small-heading">
+      <s:latin typeface="mccuHeading" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="heading">
+      <s:latin typeface="mccuHeading" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="large-heading">
+      <s:latin typeface="mccuTitle" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="body">
+      <s:latin typeface="mccuTitle" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+    <s:fontSlot name="large-body">
+      <s:latin typeface="mccuTitle" eotsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.eot" woffsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.woff" ttfsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.ttf" svgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu.svg" largeimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-large.png" smallimgsrc="https://aspc1605.sharepoint.com/ASPC/siteassets/mccu-small.png"/>
+      <s:ea typeface="" />
+      <s:cs typeface="Verdana" />
+    </s:fontSlot>
+  </s:fontSlots>
 </s:fontScheme>
