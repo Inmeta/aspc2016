@@ -7,6 +7,7 @@ using System.Security;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Yammer.api;
 
 namespace WCFServiceWebRole1
 {
@@ -22,6 +23,8 @@ namespace WCFServiceWebRole1
         {
             try {
                 CreateListItem(coordinateX, coordinateY, UniqueID);
+                var client = new YammerClient("954496-BjOb9f4eISyMX0HI0d3XTg");
+                client.PostMessage(string.Format("ALERT! ID: {0} Coordinates: {1},{2}",UniqueID,coordinateX,coordinateY), Convert.ToInt64(7465273), "Alert");
                 return string.Format("Alert added to list!");
             }
             catch(Exception exp)
