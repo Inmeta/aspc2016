@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-
+    <meta http-equiv="refresh" content="5">
     <script src="wwwroot/lib/jquery/dist/jquery.js"></script>
     <script src="wwwroot/lib/angular/angular.js"></script>
 
