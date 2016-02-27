@@ -6,5 +6,6 @@ namespace ASPC.Marvel.CrimeAPI
     {
         public Geolocation Location { get; set; }
         public string Source { get; set; }
+        public int CrimesPerYear { get; set; }
     }
 }
