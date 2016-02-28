@@ -8,4 +8,6 @@
   <pnp:File Src="SiteAssets\Fonts\MCCU.ttf" Folder="SiteAssets" Overwrite="true" />
   <pnp:File Src="SiteAssets\Fonts\MCCU.woff" Folder="SiteAssets" Overwrite="true" />
   <pnp:File Src="SiteAssets\Fonts\MCCU.woff2" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU-small.png" Folder="SiteAssets" Overwrite="true" />
+  <pnp:File Src="SiteAssets\Fonts\MCCU-large.png" Folder="SiteAssets" Overwrite="true" />
 </pnp:Files>

@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'mccu';
-    src: url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.eot');
-    src: url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.eot') format('embedded-opentype'),
-         url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.woff2') format('woff2'),
-         url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.woff') format('woff'),
-         url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.ttf') format('truetype'),
-         url('https://aspc1605.sharepoint.com/ASPC/SITEASSETS/maskb.svg#maskb') format('svg');
+    src: url('maskb.eot');
+    src: url('https://aspc1605.sharepoint.com/ASPC/siteassets/maskb.eot') format('embedded-opentype'),
+         url('https://aspc1605.sharepoint.com/ASPC/siteassets/maskb.woff2') format('woff2'),
+         url('https://aspc1605.sharepoint.com/ASPC/siteassets/maskb.woff') format('woff'),
+         url('https://aspc1605.sharepoint.com/ASPC/siteassets/maskb.ttf') format('truetype'),
+         url('https://aspc1605.sharepoint.com/ASPC/siteassets/maskb.svg#maskb') format('svg');
 }
