@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="1ed83a11-2915-4615-9bbc-290212c7f25c" 
+        solutionId="1ed83a11-2915-4615-9bbc-290212c7f25c" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="LiveMonitorApp"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="872a299c-fb3d-48f7-aa0b-9f17d25a6409" />
+  </features>
+</package>

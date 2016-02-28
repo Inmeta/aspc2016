@@ -162,7 +162,7 @@ namespace MicrosoftBandConnector
                 );
                 if (added)
                 {
-                    // NB: This call will return back to us *before* the
+                    // NB: This call will return back to us *before* t
                     // user has acknowledged the dialog on their device -
                     // we don't get to know their answer here.
                     //await bandClient.NotificationManager.ShowDialogAsync(guid, "Test", "Hello Mario");
@@ -206,13 +206,13 @@ namespace MicrosoftBandConnector
 
             var result = await client.CreateAlertAsync(59.975349, 10.665395, eventUniqueID);
             await client.CloseAsync();
-
+            await bandClient.NotificationManager.ShowDialogAsync(e.TileEvent.TileId, "Help is on the way!", "It shouldn't take long...");
             heartRateMonitor();
-            skinTemperatureMonitor();
-            GyroscopeMonitor();
-            PedometerMonitor();
-            GsrMonitor();
-            UVMonitor();
+            //skinTemperatureMonitor();
+            //GyroscopeMonitor();
+            //PedometerMonitor();
+            //GsrMonitor();
+            //UVMonitor();
 
             // start the Heartrate sensor
             try
@@ -224,52 +224,52 @@ namespace MicrosoftBandConnector
                 // handle a Band connection exception
                 throw ex;
             }
-            try
-            {
-                await bandClient.SensorManager.Gyroscope.StartReadingsAsync();
-            }
-            catch (BandException ex)
-            {
-                // handle a Band connection exception
-                throw ex;
-            }
-            try
-            {
-                await bandClient.SensorManager.Pedometer.StartReadingsAsync();
-            }
-            catch (BandException ex)
-            {
-                // handle a Band connection exception
-                throw ex;
-            }
-            try
-            {
-                await bandClient.SensorManager.Gsr.StartReadingsAsync();
-            }
-            catch (BandException ex)
-            {
-                // handle a Band connection exception
-                throw ex;
-            }
-            try
-            {
-                await bandClient.SensorManager.UV.StartReadingsAsync();
-            }
-            catch (BandException ex)
-            {
-                // handle a Band connection exception
-                throw ex;
-            }
+            //try
+            //{
+            //    await bandClient.SensorManager.Gyroscope.StartReadingsAsync();
+            //}
+            //catch (BandException ex)
+            //{
+            //    // handle a Band connection exception
+            //    throw ex;
+            //}
+            //try
+            //{
+            //    await bandClient.SensorManager.Pedometer.StartReadingsAsync();
+            //}
+            //catch (BandException ex)
+            //{
+            //    // handle a Band connection exception
+            //    throw ex;
+            //}
+            //try
+            //{
+            //    await bandClient.SensorManager.Gsr.StartReadingsAsync();
+            //}
+            //catch (BandException ex)
+            //{
+            //    // handle a Band connection exception
+            //    throw ex;
+            //}
+            //try
+            //{
+            //    await bandClient.SensorManager.UV.StartReadingsAsync();
+            //}
+            //catch (BandException ex)
+            //{
+            //    // handle a Band connection exception
+            //    throw ex;
+            //}
 
-            try
-            {
-                await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
-            }
-            catch (BandException ex)
-            {
-                // handle a Band connection exception
-                throw ex;
-            }
+            //try
+            //{
+            //    await bandClient.SensorManager.SkinTemperature.StartReadingsAsync();
+            //}
+            //catch (BandException ex)
+            //{
+            //    // handle a Band connection exception
+            //    throw ex;
+            //}
             
 
 

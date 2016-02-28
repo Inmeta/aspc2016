@@ -3,7 +3,7 @@
   <Role name="WCFServiceWebRole1">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=cenas;AccountKey=Ayox25b70HmtJqfQT+42OpAlj1vUk6caCHkC0bczlc3ek0mffuqxiqvNlRkWI5TMoTZdWi0Ad6qV9sGXJb3Yxw==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
